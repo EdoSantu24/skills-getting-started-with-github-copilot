@@ -86,19 +86,51 @@ section h3 {
   color: #333;
 }
 
+
 .participants-list {
-  list-style: disc inside;
   margin: 0;
-  padding: 0 0 0 14px;
-  max-height: 6.5rem; /* prevent very long lists from stretching the card */
+  padding: 0;
+  max-height: 6.5rem;
   overflow: auto;
   font-size: 14px;
   color: #444;
 }
 
+.participants-list.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 .participants-list li {
-  padding: 2px 0;
-  border-radius: 3px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* small, subtle delete button */
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #c62828;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: background-color 0.12s;
+}
+.delete-btn:hover {
+  background-color: rgba(198, 40, 40, 0.08);
+}
+
+/* style when there are no participants */
+.no-participants {
+  color: #666;
+  font-style: italic;
+  padding: 6px 0;
 }
 
 .form-group {
@@ -168,4 +200,17 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+.debug-btn {
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid #1a237e;
+  color: #1a237e;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.debug-btn:hover {
+  background: #f0f0ff;
 }
